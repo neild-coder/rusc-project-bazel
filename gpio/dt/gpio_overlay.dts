@@ -1,0 +1,39 @@
+/dts-v1/;
+/plugin/;
+
+#include "/usr/src/linux-headers-6.1.21-v7l+/include/dt-bindings/gpio/gpio.h"
+
+/ {
+    compatible = "brcm,bcm2835";
+    
+    fragment@0{
+        target = <&gpio>;
+        __overlay__ {
+            gpio_pins: gpio_pins{
+                brcm,pins = <0 5 6 13>;
+                brcm,function = <0 0 1 1>;
+                brcm,pull = <0 0 0 0>;
+            };
+        };
+    };
+
+    fragment@1 {
+        target-path = "/";
+        __overlay__ {
+            rgpio: rgpio {
+                compatible = "raspberrypi,rpi-gpio";
+                pinctrl-names = "default";
+                pinctrl-0 = <&gpio_pins>;
+                
+                gpio0-gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
+                gpio5-gpios = <&gpio 5 GPIO_ACTIVE_LOW>;
+                gpio6-gpios = <&gpio 6 GPIO_ACTIVE_LOW>;
+                gpio13-gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
+
+                gpio-names = "gpio0", "gpio5", "gpio6", "gpio13";
+
+                status = "okay";
+            };
+        };
+    };
+};

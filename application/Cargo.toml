@@ -1,0 +1,25 @@
+[package]
+name = "rust-application"
+version = "1.0.0"
+edition = "2021"
+license = "GNU GPLv3"
+description = "RUSC Abstraction Project - Rust Application and Binders"
+
+[authors]
+name = "Neil Derick"
+email = "neil.derick@gmail.com"
+github = "neild-coder"
+linkedin = "www.linkedin.com/in/neil-derick-682bb3184"
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3

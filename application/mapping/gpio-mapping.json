@@ -1,0 +1,8 @@
+{
+    "gpio_mapping":{
+        "gpio1": "/dev/r_gpio1",
+        "gpio2": "/dev/r_gpio2",
+        "gpio3": "/dev/r_gpio3",
+        "gpio4": "/dev/r_gpio4"
+    }
+}
