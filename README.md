@@ -39,8 +39,7 @@ GPIO pins that needs to be used can be set in the device tree file (dt folder). 
 * **Building the application**:
 ```
 cd application
-make           # or make debug to run application with debug log
-make release   # to run application without logs
+./build-application.sh
 ```
 The binary gets generated into the build folder. Currently a test application is wrriten named as rust_application. 
 
